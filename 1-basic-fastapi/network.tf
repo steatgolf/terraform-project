@@ -31,7 +31,7 @@ resource "aws_security_group" "ssh" {
   vpc_id = aws_vpc.main-vpc.id
 
   ingress {
-    cidr_blocks = ["49.228.236.120/32"]
+    cidr_blocks = ["49.228.240.19/32"]
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
@@ -50,7 +50,7 @@ resource "aws_security_group" "http" {
   vpc_id = aws_vpc.main-vpc.id
 
   ingress {
-    cidr_blocks = ["49.228.236.120/32"]
+    cidr_blocks = ["49.228.240.19/32"]
     from_port   = 80
     to_port     = 80
     protocol    = "tcp"
@@ -63,8 +63,8 @@ resource "aws_security_group" "http" {
     protocol    = "-1"
   }
 }
-resource "aws_key_pair" "fastapi" {
-  key_name   = "fastapi"
+resource "aws_key_pair" "sshkey" {
+  key_name   = "sshkey"
   public_key = file("/root/.ssh/aws.pub")
 }
 
