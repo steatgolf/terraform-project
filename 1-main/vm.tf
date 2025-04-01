@@ -14,7 +14,7 @@ data "aws_ami" "ubuntu" {
 
 }
 
-resource "aws_instance" "fastapi" {
+resource "aws_instance" "nginx" {
   ami                         = var.custom_ami != "" ? var.custom_ami : data.aws_ami.ubuntu.id
   instance_type               = var.instance_type != "" ? var.instance_type : var.instance_type_default
   key_name                    = aws_key_pair.sshkey.key_name
