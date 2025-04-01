@@ -124,5 +124,20 @@ jobs:
         terraform init
         terraform apply -auto-approve
 
+    # comment to disable curl to default page nginx port 80
+    - name: Test and destroy
+      run: terraform output -raw public_ip | xargs -I {} curl -v http://{} -m 10
+      continue-on-error: true
+
+    # comment to disable terraform destroy 
+    - name: Destroy after test
+      run: terraform destroy -auto-approve
+      
+      
+      
+
+
+
+        
 
       
