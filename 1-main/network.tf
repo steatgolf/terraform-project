@@ -63,13 +63,12 @@ resource "aws_security_group" "http" {
     protocol    = "-1"
   }
 }
-resource "aws_key_pair" "sshkey" {
-  key_name   = "aws"
-  public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHX8StPjyko52/8/pKeLqUXS6487rvOa3PPhypnG2f5B sarawoot.golf@hotmail.com"
-}
-
 # resource "aws_key_pair" "sshkey" {
-#   key_name   = "${terraform.workspace}_aws"
-#   public_key = file("/root/.ssh/${terraform.workspace}_aws.pub")
+#   key_name   = "aws"
+#   public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHX8StPjyko52/8/pKeLqUXS6487rvOa3PPhypnG2f5B sarawoot.golf@hotmail.com"
 # }
 
+resource "aws_key_pair" "sshkey" {
+  key_name   = "aws"
+  public_key = file("/root/.ssh/aws.pub")
+}

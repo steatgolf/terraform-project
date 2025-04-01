@@ -128,6 +128,8 @@ jobs:
     # Uncomment to enable testing curl to default page nginx port 80
     - name: Test
       continue-on-error: true
+
+    # Wait EC2 Install docker and run nginx image 
       run: |
         sleep 60
         terraform output -raw public_ip 
