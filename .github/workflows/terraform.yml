@@ -126,8 +126,10 @@ jobs:
 
     # comment to disable curl to default page nginx port 80
     - name: Test
-      run: terraform output -raw public_ip | xargs -I {} curl -v http://{} -m 10
       continue-on-error: true
+      run: |
+        sleep 60
+        terraform output -raw public_ip | xargs -I {} curl -v http://{} -m 10
 
     # comment to disable terraform destroy 
     - name: Destroy after test
