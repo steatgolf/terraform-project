@@ -24,7 +24,11 @@ resource "aws_instance" "fastapi" {
     aws_security_group.ssh.id,
     aws_security_group.http.id
   ]
-
   user_data_base64 = base64encode(file("${path.module}/script/ubuntu_provision.sh"))
 
+  # tags = {
+  #   Name = "FastApi-${local.environment_name}"
+  # }
+
 }
+

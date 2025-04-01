@@ -27,3 +27,7 @@ variable "instance_type_default" {
   type        = string
   default     = "t2.micro"
 }
+
+# locals {
+#   environment_name = terraform.workspace
+# }
