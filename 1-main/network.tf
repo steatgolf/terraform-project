@@ -66,5 +66,6 @@ resource "aws_security_group" "http" {
 
 resource "aws_key_pair" "sshkey" {
   key_name   = "aws"
-  public_key = file("/root/.ssh/aws.pub")
+  public_key = file("~/.ssh/aws.pub")
+  
 }

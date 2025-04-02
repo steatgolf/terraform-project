@@ -31,7 +31,6 @@ provider "aws" {
   profile                  = "terraform-sa"
 }
 
-
 locals {
   environment_name = "dev"
 }

@@ -35,11 +35,7 @@ variable "s3_bucket_name" {
 }
 
 
-# variable "ssh_key" {
-#   description = "The owners of the AMI to use for the VM, default is the official Ubuntu 24 AMI"
-#   type        = string
-#   default     = ""
-# }
+
 
 # locals {
 #   environment_name = terraform.workspace
